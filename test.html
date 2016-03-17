@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+
+	<style type="text/css">
+		.clearfix{*zoom:1;}
+	    .clearfix:after { 
+		    visibility: hidden; 
+		    display: block; 
+		    font-size: 0; 
+		    content: " "; 
+		    clear: both; 
+		    height: 0; 
+		} 
+		ul,li { list-style:  none;}
+		.lp-slider{padding: 33px 0; }
+		.lp-slider img{width: 220px; height: 165px; display: block; margin::0 11px;}
+		.selected { background:#f00;}
+		.pannal-li {height: 219px;}  /*  mark : 高度要设定*/
+		a {  text-decoration: none; color: #000;}
+
+	</style>
+</head>
+<body>
+
+<div class="silder-box clearfix">
+
+            <div  id="nh-silder" style="width:225px;">  
+
+            	<ul class="tab-list clearfix">
+                    <li data-tab-index="0"  style="float:left; margin-right:10px;"><a href="javascript:void(0);">frist</a></li>
+                    <li data-tab-index="1" style="float:left; margin-right:10px;"><a href="javascript:void(0);">second</a></li>
+                    <li data-tab-index="2"  style="float:left"><a href="javascript:void(0);">third</a></li>
+            	</ul>
+
+                <div class="lp-slider clearfix" >
+                    <div class="pannal-li">  
+	                     <a  href="javascript:void(0)" >
+		                        <img src="2.png">
+		                        <div  style="text-aling:left">
+		                          	I believe much trouble would be saved if we opened our hearts more.
+		                         </div>
+	                     </a>
+                    </div>
+                    <div class="pannal-li" >  
+	                    <textarea class="data-lazyload " style="display:none">
+	                        <a  href="javascript:void(0)" >
+		                          <img  src="3.png">
+		                          <div  style="text-aling:left">
+		                            I believe much trouble would be saved if we opened our hearts more.
+		                          </div>
+	                        </a>
+	                    </textarea>
+	                </div>
+	                <div class="pannal-li" >  
+	                    <textarea class="data-lazyload " style="display:none">
+	                        <a href="javascript:void(0)" >
+		                          <img  src="1.jpg">
+		                          <div  style="text-aling:left">
+		                            I believe much trouble would be saved if we opened our hearts more.
+		                          </div>
+	                        </a>
+	                    </textarea>
+	                </div>
+                </div>
+            </div>
+ </div>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jslider.js"></script>
+<script type="text/javascript">
+
+	var slider = $.fn.jSlider;
+    var bannerSlider = new slider('nh-silder', {
+        autoSlide: false,
+        contentClass:'lp-slider',
+        effect: "hSlider", 
+        pannelClass:'pannal-li',
+        navClass:'tab-list',
+        triggerSelector:'li',
+        eventType : "mouseover",
+        selectedClass:'selected',
+        lazyloadCls : "data-lazyload",
+        autoResponsiveLayout: true,
+	    leftControlBtnCls: null,
+	    rightControlBtnCls: null, 
+        pannelViewLength: 1
+    });
+
+</script>
+</body>
+</html>
